@@ -1,15 +1,15 @@
 {
   "id": "f79b5d7c-ed73-405d-881d-b90e4ed9698f",
   "revision": 0,
-  "last_node_id": 12,
-  "last_link_id": 6,
+  "last_node_id": 24,
+  "last_link_id": 17,
   "nodes": [
     {
       "id": 3,
       "type": "LoadImage",
       "pos": [
-        1147.4814993600128,
-        779.4225253596109
+        1149.9521260698484,
+        857.0095069788864
       ],
       "size": [
         282.798828125,
@@ -45,8 +45,8 @@
       "id": 4,
       "type": "LoadImage",
       "pos": [
-        1147.4814993600128,
-        1182.738359029758
+        1149.9521260698484,
+        1260.3253406490333
       ],
       "size": [
         282.798828125,
@@ -82,15 +82,15 @@
       "id": 2,
       "type": "RsaveImageC",
       "pos": [
-        1724.8990290782588,
-        927.7112182920378
+        1727.3696557880944,
+        1005.2981999113136
       ],
       "size": [
         270,
         58
       ],
       "flags": {},
-      "order": 6,
+      "order": 12,
       "mode": 0,
       "inputs": [
         {
@@ -119,15 +119,15 @@
       "id": 9,
       "type": "BatchImagesNode",
       "pos": [
-        1492.9744439066358,
-        927.7112182920378
+        1495.4450706164714,
+        1005.2981999113136
       ],
       "size": [
         169.23046875,
         86
       ],
       "flags": {},
-      "order": 4,
+      "order": 8,
       "mode": 0,
       "inputs": [
         {
@@ -168,15 +168,15 @@
       "id": 1,
       "type": "Rsave",
       "pos": [
-        2057.5931454998818,
-        927.7112182920378
+        2060.0637722097167,
+        1005.2981999113136
       ],
       "size": [
         270,
         82
       ],
       "flags": {},
-      "order": 7,
+      "order": 15,
       "mode": 0,
       "inputs": [
         {
@@ -237,8 +237,8 @@
       "id": 12,
       "type": "RsaveDate",
       "pos": [
-        1724.8990290782588,
-        1113.8721001298773
+        1727.3696557880944,
+        1191.4590817491526
       ],
       "size": [
         270,
@@ -277,7 +277,7 @@
         82
       ],
       "flags": {},
-      "order": 5,
+      "order": 9,
       "mode": 0,
       "inputs": [
         {
@@ -293,6 +293,365 @@
       "widgets_values": [
         true,
         ""
+      ]
+    },
+    {
+      "id": 13,
+      "type": "PrimitiveStringMultiline",
+      "pos": [
+        188.91635488311576,
+        472.9610725938044
+      ],
+      "size": [
+        400,
+        200
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            9
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PrimitiveStringMultiline"
+      },
+      "widgets_values": [
+        "123\n666"
+      ]
+    },
+    {
+      "id": 17,
+      "type": "LoadImage",
+      "pos": [
+        -74.84381346195724,
+        857.258694811454
+      ],
+      "size": [
+        282.798828125,
+        314.0000000000001
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            11
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "ComfyUI_00001_.png",
+        "image"
+      ]
+    },
+    {
+      "id": 18,
+      "type": "LoadImage",
+      "pos": [
+        -74.84381346195724,
+        1260.574528481601
+      ],
+      "size": [
+        282.798828125,
+        314.0000000000001
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            12
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "ComfyUI_00001_.png",
+        "image"
+      ]
+    },
+    {
+      "id": 20,
+      "type": "BatchImagesNode",
+      "pos": [
+        270.6491310846658,
+        1005.5473877438804
+      ],
+      "size": [
+        169.23046875,
+        86
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "image0",
+          "name": "images.image0",
+          "type": "IMAGE",
+          "link": 11
+        },
+        {
+          "label": "image1",
+          "name": "images.image1",
+          "type": "IMAGE",
+          "link": 12
+        },
+        {
+          "label": "image2",
+          "name": "images.image2",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            10
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BatchImagesNode"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 15,
+      "type": "RsaveImage",
+      "pos": [
+        621.7517215631293,
+        505.46494805980706
+      ],
+      "size": [
+        150.11673891327155,
+        26
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "anything",
+          "type": "*",
+          "link": 9
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            8
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "RsaveImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 19,
+      "type": "RsaveImageC",
+      "pos": [
+        502.5737162562887,
+        1005.5473877438804
+      ],
+      "size": [
+        270,
+        58
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 10
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": [
+            16
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "RsaveImageC"
+      },
+      "widgets_values": [
+        "webp"
+      ]
+    },
+    {
+      "id": 24,
+      "type": "RsaveImage",
+      "pos": [
+        551.7365600635139,
+        1149.2819568921464
+      ],
+      "size": [
+        150.11673891327155,
+        26
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "anything",
+          "type": "*",
+          "link": 16
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            15
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "RsaveImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 16,
+      "type": "SaveImage",
+      "pos": [
+        798.326045756376,
+        472.9610725938044
+      ],
+      "size": [
+        305.40858619645076,
+        270
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 8
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "ComfyUI"
+      ]
+    },
+    {
+      "id": 23,
+      "type": "SaveImage",
+      "pos": [
+        800.8731549915087,
+        1149.2819568921464
+      ],
+      "size": [
+        305.40858619645076,
+        270
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 15
+        },
+        {
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          },
+          "link": 17
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "ComfyUI"
+      ]
+    },
+    {
+      "id": 22,
+      "type": "RsaveDate",
+      "pos": [
+        431.8532989767856,
+        1337.2819568921464
+      ],
+      "size": [
+        270,
+        82
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "date",
+          "type": "STRING",
+          "links": [
+            17
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "RsaveDate"
+      },
+      "widgets_values": [
+        "",
+        "%Y-%m-%d-%H-%M-%S"
       ]
     }
   ],
@@ -344,15 +703,79 @@
       1,
       1,
       "STRING"
+    ],
+    [
+      8,
+      15,
+      0,
+      16,
+      0,
+      "IMAGE"
+    ],
+    [
+      9,
+      13,
+      0,
+      15,
+      0,
+      "STRING"
+    ],
+    [
+      10,
+      20,
+      0,
+      19,
+      0,
+      "IMAGE"
+    ],
+    [
+      11,
+      17,
+      0,
+      20,
+      0,
+      "IMAGE"
+    ],
+    [
+      12,
+      18,
+      0,
+      20,
+      1,
+      "IMAGE"
+    ],
+    [
+      15,
+      24,
+      0,
+      23,
+      0,
+      "IMAGE"
+    ],
+    [
+      16,
+      19,
+      0,
+      24,
+      0,
+      "*"
+    ],
+    [
+      17,
+      22,
+      0,
+      23,
+      1,
+      "STRING"
     ]
   ],
   "groups": [
     {
       "id": 1,
-      "title": "SaveImages",
+      "title": "SaveImages2NPY",
       "bounding": [
-        1137.4814993600128,
-        705.8225253596108,
+        1139.9521260698484,
+        783.4095069788864,
         1200.111646139869,
         800.9158336701473
       ],
@@ -362,7 +785,7 @@
     },
     {
       "id": 3,
-      "title": "SaveAny",
+      "title": "SaveAny2NPY",
       "bounding": [
         1138.221785722282,
         399.01513586273074,
@@ -372,15 +795,41 @@
       "color": "#3f789e",
       "font_size": 24,
       "flags": {}
+    },
+    {
+      "id": 4,
+      "title": "SaveAny2Image",
+      "bounding": [
+        178.91635488311576,
+        399.36107259380435,
+        934.8182770697109,
+        353.6
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 5,
+      "title": "SaveImages2Image",
+      "bounding": [
+        -84.84381346195728,
+        783.658694811454,
+        1200.111646139869,
+        800.9158336701473
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
     }
   ],
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.5459774138270215,
+      "scale": 0.49100511805803787,
       "offset": [
-        -631.0991212455492,
-        -268.7971017020069
+        385.126532985166,
+        -239.25786209942206
       ]
     },
     "frontendVersion": "1.41.21",
