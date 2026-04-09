@@ -25,7 +25,7 @@ class Rsave:
         return {
             "required": {
                 "anything": (any, {}),
-                "filename_date": ("BOOLEAN", {"default": False}),
+                "filename_counter": ("BOOLEAN", {"default": True}),
                 "filename_prefix": ("STRING", {"default": "ComfyUI"})
             }
         }
@@ -35,17 +35,9 @@ class Rsave:
     OUTPUT_NODE = True
     CATEGORY = "ResourcesSave"
 
-    def save(self, anything=None, filename_date=False, filename_prefix="ComfyUI"):
-        if filename_date:
-            timestamp = time.time()
-            local_time = time.localtime(timestamp)
-            formatted_time = time.strftime("%Y-%m-%d-%H-%M-%S", local_time)
-            filename_prefix += formatted_time
-        full_output_folder, filename, counter, subfolder, filename_prefix = folder_paths.get_save_image_path(
-            filename_prefix,
-            folder_paths.get_output_directory()
-        )
-        if filename_date:
+    def save(self, anything=None, filename_counter=True, filename_prefix="ComfyUI"):
+        full_output_folder, filename, counter, subfolder, filename_prefix = folder_paths.get_save_image_path(filename_prefix, folder_paths.get_output_directory())
+        if not filename_counter:
             file = f"{filename}.npy"
         else:
             file = f"{filename}_{counter:05}_.npy"
