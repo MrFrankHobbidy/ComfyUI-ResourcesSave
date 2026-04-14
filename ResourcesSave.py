@@ -100,11 +100,12 @@ class RsaveImageC:
             img = Image.fromarray(np.clip(i, 0, 255).astype(np.uint8))
             imgo = BytesIO()
             if iformat == "webp":
-                img.save(imgo, quality=100, format="webp", optimize=True)
+                # img.save(imgo, quality=100, format="webp", optimize=True)
+                img.save(imgo, quality=100, format="webp")
             elif iformat == "jpg":
-                img.save(imgo, quality=100, format="jpeg", optimize=True)
+                img.save(imgo, quality=100, format="jpeg")
             elif iformat == "png":
-                img.save(imgo, compress_level=6, format="png", optimize=True)
+                img.save(imgo, compress_level=6, format="png")
             imgb = imgo.getvalue()
             imageg.append(BytesIO(imgb))
             imgo.close()
